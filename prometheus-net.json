@@ -52,7 +52,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1561383142473,
+  "iteration": 1561437580400,
   "links": [],
   "panels": [
     {
@@ -219,7 +219,7 @@
           "label": "",
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -247,7 +247,7 @@
       ],
       "datasource": "${DS_PROMETHEUS}",
       "decimals": null,
-      "format": "dateTimeFromNow",
+      "format": "s",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -300,7 +300,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "process_start_time_seconds * 1000",
+          "expr": "time() - process_start_time_seconds",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -793,15 +793,15 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "text": "10m",
-          "value": "10m"
+          "text": "1m",
+          "value": "1m"
         },
         "hide": 0,
         "label": null,
         "name": "interval",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "1m",
             "value": "1m"
           },
@@ -811,7 +811,7 @@
             "value": "5m"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "10m",
             "value": "10m"
           },
@@ -895,5 +895,5 @@
   "timezone": "",
   "title": "prometheus-net",
   "uid": "zyAf4i4Zz",
-  "version": 9
+  "version": 10
 }
